@@ -6,7 +6,6 @@ import { supabase } from "./supabase";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-//formdata is web api..automatically generated
 export async function updateGuest(formData) {
   const session = await auth();
   if (!session) throw new Error("You must be logged in");
@@ -19,7 +18,6 @@ export async function updateGuest(formData) {
 
   const updateData = { nationality, countryFlag, nationalID };
 
-  //session comes from supabase
   const { data, error } = await supabase
     .from("guests")
     .update(updateData)

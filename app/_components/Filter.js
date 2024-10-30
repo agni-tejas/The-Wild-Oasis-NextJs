@@ -12,7 +12,6 @@ function Filter() {
   function handleFilter(filter) {
     const params = new URLSearchParams(searchParams);
     params.set("capacity", filter);
-    //scroll false will not make the website scroll to top
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 

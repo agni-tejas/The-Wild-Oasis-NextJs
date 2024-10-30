@@ -13,7 +13,6 @@ const authConfig = {
     authorized({ auth, request }) {
       return !!auth?.user;
     },
-    //user,account,profile are derived automatically not passed anywhere
     async signIn({ user, account, profile }) {
       try {
         const existingGuest = await getGuest(user.email);
